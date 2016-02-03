@@ -1,0 +1,63 @@
+//testing git
+<html>
+    <script>
+//returns 3 for all the array calls at the bottom
+//global execution context has buildFunction and fs
+//buildfunctions execution context has arr, i, 3
+//console.log isn't being run here - the function is just an expression it's not being envoked
+
+
+function buildFunctions() {
+    
+    var arr = []; //arrays are collections of anything
+    
+    for (var i = 0; i < 3; i++) {
+        
+        arr.push(
+            function() {
+                console.log(i);
+            }
+        )
+        
+    }
+    return arr; 
+}
+
+var fs = buildFunctions();
+
+fs[0]();
+fs[1]();
+fs[2]();
+
+
+//change this to get 0, 1, 2
+//need a separate execution context that holds each i 
+//get an execution context by creating a function
+
+function buildFunctions2() {
+    
+    var arr = []; //arrays are collections of anything
+    
+    for (var i = 0; i < 3; i++) {
+        
+        arr.push(
+           (function(j) {
+               return function() {
+                   console.log(j);
+                   //looks to j as the execution context 
+                   //so it can store each iteration of the loop
+               }
+           }(i))
+        )
+    } // end of for loop
+        
+    return arr; 
+}
+
+var fs2 = buildFunctions2();
+
+fs2[0]();
+fs2[1]();
+fs2[2]();
+    </script>
+</html>
