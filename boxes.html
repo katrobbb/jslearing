@@ -1,0 +1,113 @@
+
+
+<html>
+<style type="text/css">
+    .testbox { text-align: center; padding-top: 90px; font-weight: 700; color: pink; font-size: 18px; margin-bottom: 15px;}
+     .testbox2 { text-align: center; padding-top: 90px; font-weight: 700; color: mediumvioletred; font-size: 18px; float: left; margin-right: 15px;}
+    .testbox3 { text-align: center; padding-top: 90px; font-weight: 700; color: rebeccapurple; font-size: 18px; float: left; margin-right: 15px; }
+
+</style>
+<body>
+
+    
+</body>
+
+</html>
+
+<script>
+  
+
+    var box = function(){
+    
+    var div = document.createElement('div');
+    div.innerHTML = "test box";
+    div.style.width = '200px';
+    div.style.height = '200px';
+    div.style.border = '5px pink solid';
+    document.body.appendChild(div);
+        
+        var addsomeclass = function() {
+            div.classList.add('testbox');        
+        }
+        addsomeclass();
+
+    }
+    
+    box();
+    
+    
+ var boxes = function(){
+    for(i = 0; i < 2; i++) {
+        var div = document.createElement('div');
+        div.innerHTML = "test box made with for loop";
+        div.style.width = '200px';
+        div.style.height = '200px';
+        div.style.border = '5px mediumvioletred solid';
+        div.style.marginBottom = '15px';
+        document.body.appendChild(div);
+        
+        var addsomeclass = function() {
+            div.classList.add('testbox2');        
+        }
+        addsomeclass();
+        
+        if (i === 1) {
+            div.style.border = '5px teal solid';
+            div.style.clear = 'right';    
+        }
+        
+    }// end of for loop
+     
+    } //end of boxes
+    
+    boxes();
+    
+    //immediately envoked function expression
+    
+    (function(){
+    for(i = 0; i < 3; i++) {
+        var div = document.createElement('div');
+        div.innerHTML = "test box made with IFFE";
+        div.style.width = '200px';
+        div.style.height = '200px';
+        div.style.border = '5px rebeccapurple solid';
+        document.body.appendChild(div);
+        
+        var addsomeclass = function() {
+            div.classList.add('testbox3');        
+        }
+        addsomeclass();
+        
+        if (i === 0) {
+            div.style.clear = 'left';    
+        }   
+        
+        if (i === 1) {
+            div.style.border = '5px teal solid';
+        }   
+            
+    }
+    
+
+    })();
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+</script>
