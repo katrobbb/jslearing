@@ -1,0 +1,28 @@
+<html>
+    <head></head>
+    <script>
+
+
+function cats(catname) {
+    
+    return function(color, age) {
+        
+        if (catname === 'carrie') {
+            console.log("it's carrie the cat. " + ' Color: ' + color + ' Age: ' + age);
+        }
+        
+        if (catname === 'charlotte') {
+            console.log("it's charlotte the cat. " + ' Color: ' + color + ' Age: ' + age);
+        }
+    }
+}
+
+var createcat1 = cats('carrie');
+var createcat2 = cats('charlotte');
+
+createcat1('grey', '5');
+createcat2('tabby', '10'); 
+
+ 
+    </script>
+</html>

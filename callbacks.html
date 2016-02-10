@@ -1,0 +1,23 @@
+<html>
+    <head></head>
+    <script>
+        
+ // first class functions vs function expressions
+// callback function: a function you give to another function to be run when the other function is finished.. so the function you invoke calls back by calling the function you gave it when it finishes
+        
+function addmystuff(callback) {
+       
+        console.log('Ok ill log your stuff because you asked nicely :)');
+        callback();
+    }   
+
+addmystuff(function() {
+     
+        var a = 3;
+        var b = 6;
+        console.log(a + b); 
+});
+        
+        
+    </script>
+</html>
